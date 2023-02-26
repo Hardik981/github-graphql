@@ -1,6 +1,8 @@
 import { useNavigate } from 'react-router-dom';
 import { AppContext } from '.';
-import { useContext, useRef, useEffect, useState } from 'react';
+import { useContext, useRef, useEffect, useState, FormEvent } from 'react';
+import styles from './CSS/Form.module.css'
+
 export default function Form() {
     const { token, setToken } = useContext(AppContext)
     const [clicked, setClicked] = useState(false)
@@ -9,15 +11,18 @@ export default function Form() {
     useEffect(() => {
         if (clicked) navigate("/ui");
     }, [clicked])
-    function gotoUI() {
+    function gotoUI(e: FormEvent) {
+        e.preventDefault()
         if (setToken) setToken((getToken.current as HTMLInputElement).value)
         setClicked(true)
     }
     return (
-        <div onSubmit={gotoUI}>
-            <label>Type your Github Token</label>
-            <input type='password' title='token' ref={getToken} />
-            <button onClick={gotoUI}>Submit</button>
-        </div>
+        <section className={styles.formBlock}>
+            <form className={styles.formStyle} onSubmit={gotoUI}>
+                <h3>Type your Github Token</h3>
+                <input type='password' title='token' ref={getToken} /><br />
+                <input type='submit' />
+            </form>
+        </section>
     )
 }

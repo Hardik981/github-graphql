@@ -15,7 +15,7 @@ const root = ReactDOM.createRoot(
 const httpLink = createHttpLink({
   uri: 'https://api.github.com/graphql'
 });
-let Token: any
+let Token: string | undefined
 const authLink = setContext((_, { headers }) => {
   return {
     headers: {

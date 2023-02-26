@@ -1,0 +1,22 @@
+.formStyle {
+    border: 1px solid lightgray;
+    width: 50%;
+    margin-top: 30px;
+}
+
+.formStyle input[type='password'] {
+    height: 20px;
+    width: 40%;
+    margin-bottom: 15px;
+}
+
+.formStyle input[type='submit'] {
+    margin-bottom: 20px;
+    padding: 5px 10px;
+    background-color: transparent;
+}
+
+.formBlock {
+    display: flex;
+    justify-content: center;
+}

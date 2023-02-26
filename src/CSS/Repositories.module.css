@@ -1,0 +1,13 @@
+.repoBlock {
+    display: flex;
+    padding: 15px;
+    width: 50%;
+    justify-content: space-between;
+}
+
+.repoBlock button {
+    height: 30px;
+    padding: 0 5px;
+    background: transparent;
+    align-self: center;
+}
